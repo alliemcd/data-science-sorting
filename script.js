@@ -71,37 +71,4 @@ function restartQuiz() {
 }
 
 initScores();
-loadQuestion();function nextQuestion() {
-  currentQuestion++;
-
-  if (currentQuestion < questions.length) {
-    loadQuestion();
-  } else {
-    showResult();
-  }
-}
-
-function showResult() {
-  document.getElementById("quiz").classList.add("hidden");
-  resultDiv.classList.remove("hidden");
-
-  let result = Object.keys(scores).reduce((a, b) =>
-    scores[a] > scores[b] ? a : b
-  );
-
-  resultText.textContent = `${result}: ${resultsInfo[result]}`;
-}
-
-function restartQuiz() {
-  currentQuestion = 0;
-
-  initScores();
-
-  resultDiv.classList.add("hidden");
-  document.getElementById("quiz").classList.remove("hidden");
-
-  loadQuestion();
-}
-
-initScores();
 loadQuestion();
