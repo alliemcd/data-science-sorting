@@ -17,22 +17,13 @@ const questions = [
       { text: "Structured", type: "Thinker" },
       { text: "Adventurous", type: "Leader" }
     ]
-  },
-
-  {
-    question: "What motivates you most?",
-    answers: [
-      { text: "Success", type: "Achiever" },
-      { text: "Helping others", type: "Supporter" },
-      { text: "Knowledge", type: "Thinker" },
-      { text: "Leading people", type: "Leader" }
-    ]
   }
 ];
 
 const resultsInfo = {
-  Leader: "You are bold, confident, and action-oriented.",
-  Thinker: "You are analytical, curious, and thoughtful.",
-  Achiever: "You are driven, ambitious, and goal-focused.",
-  Supporter: "You value relationships, empathy, and teamwork."
+  Leader: "You are bold and action-oriented.",
+  Thinker: "You are analytical and thoughtful.",
+  Achiever: "You are driven and goal-focused.",
+  Supporter: "You value relationships and teamwork."
+};  Supporter: "You value relationships, empathy, and teamwork."
 };
