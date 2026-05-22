@@ -1,9 +1,7 @@
 body {
   font-family: Arial, sans-serif;
   background: #f4f6f8;
-  margin: 0;
   padding: 40px 20px;
-  text-align: center;
 }
 
 .container {
@@ -12,11 +10,14 @@ body {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
 }
 
 #question {
-  font-size: 24px;
   margin-bottom: 20px;
 }
 
@@ -31,10 +32,11 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
-button:hover {
+.hidden {
+  display: none;
+}button:hover {
   transform: scale(1.02);
 }
 
