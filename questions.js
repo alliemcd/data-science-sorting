@@ -25,5 +25,4 @@ const resultsInfo = {
   Thinker: "You are analytical and thoughtful.",
   Achiever: "You are driven and goal-focused.",
   Supporter: "You value relationships and teamwork."
-};  Supporter: "You value relationships, empathy, and teamwork."
 };
