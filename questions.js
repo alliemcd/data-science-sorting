@@ -1,4 +1,3 @@
-```javascript
 const questions = [
   {
     question: "How do you approach challenges?",
@@ -37,5 +36,3 @@ const resultsInfo = {
   Achiever: "You are driven, ambitious, and goal-focused.",
   Supporter: "You value relationships, empathy, and teamwork."
 };
-```
-}
