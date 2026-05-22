@@ -2,27 +2,27 @@ const questions = [
   {
     question: "How do you approach challenges?",
     answers: [
-      { text: "With courage", type: "Leader" },
-      { text: "With logic", type: "Thinker" },
-      { text: "With ambition", type: "Achiever" },
-      { text: "With compassion", type: "Supporter" }
+      { text: "With courage", type: "Machine Learning" },
+      { text: "With logic", type: "Data Science" },
+      { text: "With ambition", type: "Phsyics" },
+      { text: "With compassion", type: "ACME" }
     ]
   },
 
   {
     question: "Which environment do you prefer?",
     answers: [
-      { text: "Fast-paced", type: "Achiever" },
-      { text: "Collaborative", type: "Supporter" },
-      { text: "Structured", type: "Thinker" },
-      { text: "Adventurous", type: "Leader" }
+      { text: "Fast-paced", type: "Phsyics" },
+      { text: "Collaborative", type: "ACME" },
+      { text: "Structured", type: "Data Science" },
+      { text: "Adventurous", type: "Machine Learning" }
     ]
   }
 ];
 
 const resultsInfo = {
-  Leader: "You are bold and action-oriented.",
-  Thinker: "You are analytical and thoughtful.",
-  Achiever: "You are driven and goal-focused.",
-  Supporter: "You value relationships and teamwork."
+  "Machine Learning": "You are bold and action-oriented.",
+  "Data Science": "You are analytical and thoughtful.",
+  "Physics": "You are driven and goal-focused.",
+  "ACME": "You value relationships and teamwork."
 };
