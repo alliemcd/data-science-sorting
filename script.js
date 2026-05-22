@@ -1,4 +1,3 @@
-```javascript
 let currentQuestion = 0;
 let scores = {};
 
@@ -69,48 +68,3 @@ function restartQuiz() {
 
 initScores();
 loadQuestion();
-```
-\'a0\'a0\'a0\'a0\'a0 scores[answer.type]++;\
-\'a0\'a0\'a0\'a0\'a0 nextQuestion();\
-\'a0\'a0\'a0 \};\
-\
-\'a0\'a0\'a0 answersEl.appendChild(btn);\
-\'a0 \});\
-\}\
-\
-function nextQuestion() \{\
-\'a0 currentQuestion++;\
-\
-\'a0 if (currentQuestion < questions.length) \{\
-\'a0\'a0\'a0 loadQuestion();\
-\'a0 \} else \{\
-\'a0\'a0\'a0 showResult();\
-\'a0 \}\
-\}\
-\
-function showResult() \{\
-\'a0 document.getElementById("quiz").classList.add("hidden");\
-\'a0 resultDiv.classList.remove("hidden");\
-\
-\'a0 let result = Object.keys(scores).reduce((a, b) =>\
-\'a0\'a0\'a0 scores[a] > scores[b] ? a : b\
-\'a0 );\
-\
-\'a0 resultText.textContent = `$\{result\}: $\{resultsInfo[result]\}`;\
-\}\
-\
-function restartQuiz() \{\
-\'a0 currentQuestion = 0;\
-\'a0 initScores();\
-\
-\'a0 resultDiv.classList.add("hidden");\
-\'a0 document.getElementById("quiz").classList.remove("hidden");\
-\
-\'a0 loadQuestion();\
-\}\
-\
-nextBtn.style.display = "none"; // not needed for now\
-\
-initScores();\
-loadQuestion();\
-}
