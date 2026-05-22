@@ -1,39 +1,75 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;}
-{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
-{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\deftab720
-\pard\pardeftab720\partightenfactor0
+```javascript
+let currentQuestion = 0;
+let scores = {};
 
-\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec2 let currentQuestion = 0;\
-let scores = \{\};\
-\
-const questionEl = document.getElementById("question");\
-const answersEl = document.getElementById("answers");\
-const nextBtn = document.getElementById("nextBtn");\
-const resultDiv = document.getElementById("result");\
-const resultText = document.getElementById("resultText");\
-\
-function initScores() \{\
-\'a0 scores = \{\};\
-\'a0 Object.keys(resultsInfo).forEach(type => \{\
-\'a0\'a0\'a0 scores[type] = 0;\
-\'a0 \});\
-\}\
-\
-function loadQuestion() \{\
-\'a0 answersEl.innerHTML = "";\
-\
-\'a0 const q = questions[currentQuestion];\
-\'a0 questionEl.textContent = q.question;\
-\
-\'a0 q.answers.forEach(answer => \{\
-\'a0\'a0\'a0 const btn = document.createElement("button");\
-\'a0\'a0\'a0 btn.textContent = answer.text;\
-\
-\'a0\'a0\'a0 btn.onclick = () => \{\
+const questionEl = document.getElementById("question");
+const answersEl = document.getElementById("answers");
+const resultDiv = document.getElementById("result");
+const resultText = document.getElementById("resultText");
+
+function initScores() {
+  scores = {};
+
+  Object.keys(resultsInfo).forEach(type => {
+    scores[type] = 0;
+  });
+}
+
+function loadQuestion() {
+  answersEl.innerHTML = "";
+
+  const q = questions[currentQuestion];
+  questionEl.textContent = q.question;
+
+  q.answers.forEach(answer => {
+    const btn = document.createElement("button");
+
+    btn.textContent = answer.text;
+
+    btn.addEventListener("click", () => {
+      scores[answer.type]++;
+      nextQuestion();
+    });
+
+    answersEl.appendChild(btn);
+  });
+}
+
+function nextQuestion() {
+  currentQuestion++;
+
+  if (currentQuestion < questions.length) {
+    loadQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  document.getElementById("quiz").classList.add("hidden");
+  resultDiv.classList.remove("hidden");
+
+  let result = Object.keys(scores).reduce((a, b) =>
+    scores[a] > scores[b] ? a : b
+  );
+
+  resultText.textContent = `${result}: ${resultsInfo[result]}`;
+}
+
+function restartQuiz() {
+  currentQuestion = 0;
+
+  initScores();
+
+  resultDiv.classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  loadQuestion();
+}
+
+initScores();
+loadQuestion();
+```
 \'a0\'a0\'a0\'a0\'a0 scores[answer.type]++;\
 \'a0\'a0\'a0\'a0\'a0 nextQuestion();\
 \'a0\'a0\'a0 \};\
