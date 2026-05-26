@@ -32,12 +32,12 @@ button {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 button:hover {
   transform: scale(1.02);
   background: #0047BA;
-  transition: all 0.2s ease;
 }
 
 .hidden {
