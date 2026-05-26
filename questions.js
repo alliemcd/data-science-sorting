@@ -110,24 +110,24 @@ const questions = [
   },
 
   {
-  question: "Which topic sounds most interesting to you?",
-  answers: [
-    { text: "Building smart apps like ChatGPT or recommendation systems", type: "Machine Learning" },
-    { text: "Learning about space, planets, and how the universe works", type: "Physics & Astronomy: Data Science" },
-    { text: "Figuring out what data from surveys or experiments really means", type: "Statistics: Data Science" },
-    { text: "Solving math problems and figuring out how things work using equations", type: "Applied & Computational Mathematics" }
-  ]
-},
+    question: "Which topic sounds most interesting to you?",
+    answers: [
+      { text: "Building smart apps like ChatGPT or recommendation systems", type: "Machine Learning" },
+      { text: "Learning about space, planets, and how the universe works", type: "Physics & Astronomy: Data Science" },
+      { text: "Figuring out what data from surveys or experiments really means", type: "Statistics: Data Science" },
+      { text: "Solving math problems and figuring out how things work using equations", type: "Applied & Computational Mathematics" }
+    ]
+  },
 
-{
-  question: "Which future job sounds most interesting?",
-  answers: [
-    { text: "Working on AI that helps computers learn and make predictions", type: "Machine Learning" },
-    { text: "Studying stars, planets, or space using data and computers", type: "Physics & Astronomy: Data Science" },
-    { text: "Using data to answer questions like 'what is actually true?'", type: "Statistics: Data Science" },
-    { text: "Using math and computers to model and simulate real-world systems", type: "Applied & Computational Mathematics" }
-  ]
-},
+  {
+    question: "Which future job sounds most interesting?",
+    answers: [
+      { text: "Working on AI that helps computers learn and make predictions", type: "Machine Learning" },
+      { text: "Studying stars, planets, or space using data and computers", type: "Physics & Astronomy: Data Science" },
+      { text: "Using data to answer questions like 'what is actually true?'", type: "Statistics: Data Science" },
+      { text: "Using math and computers to model and simulate real-world systems", type: "Applied & Computational Mathematics" }
+    ]
+  },
 
   {
     question: "Which activity would you rather do?",
@@ -143,9 +143,17 @@ const questions = [
     question: "Which phrase sounds most like you?",
     answers: [
       { text: "I love technology and intelligent systems", type: "Machine Learning" },
-      { text: "I’m fascinated by space and physics", type: "Physics & Astronomy: Data Science" },
+      { text: "I'm fascinated by space and physics", type: "Physics & Astronomy: Data Science" },
       { text: "I care about evidence and accuracy", type: "Statistics: Data Science" },
       { text: "I enjoy abstract mathematical thinking", type: "Applied & Computational Mathematics" }
     ]
   }
 ];
+
+const resultsInfo = {
+  "Machine Learning": "You excel at building intelligent systems and solving complex problems with data-driven approaches.",
+  "Physics & Astronomy: Data Science": "You're drawn to understanding the universe and applying data science to cosmic mysteries.",
+  "Statistics: Data Science": "You have a strong analytical mind and excel at interpreting data to uncover meaningful insights.",
+  "Applied & Computational Mathematics": "You thrive on mathematical modeling and using advanced mathematics to solve real-world problems.",
+  "Data Science": "Your interests span multiple disciplines! Data Science offers a unique intersection of all these fields, allowing you to work on diverse problems using computational, statistical, and analytical approaches."
+};
