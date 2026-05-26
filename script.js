@@ -58,47 +58,38 @@ function showResult() {
   document.getElementById("quiz").classList.add("hidden");
   resultDiv.classList.remove("hidden");
 
-  // Sort scores highest -> lowest
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
 
   const topScore = sorted[0][1];
 
-  // Count majors close to the top score
-  const withinOne = sorted.filter(
-    ([major, score]) => topScore - score <= 1
-  );
+  const withinOne = sorted.filter(([_, score]) => topScore - score <= 1);
+  const withinTwo = sorted.filter(([_, score]) => topScore - score <= 2);
 
-  const withinTwo = sorted.filter(
-    ([major, score]) => topScore - score <= 2
-  );
+  let finalResult = sorted[0][0];
 
-  let finalResult;
+  // Only trigger Data Science if there is REAL balance across fields
+  const ml = scores["Machine Learning"];
+  const stats = scores["Statistics: Data Science"];
+  const acme = scores["Applied & Computational Mathematics"];
 
-  // Data Science overlap rules
-  if (withinOne.length >= 2) {
+  const balancedTechnical =
+    Math.abs(ml - stats) <= 1 && ml >= 3 && stats >= 3;
+
+  const broaderBalance =
+    withinTwo.length >= 3;
+
+  if (balancedTechnical || broaderBalance) {
     finalResult = "Data Science";
   }
-  else if (withinTwo.length >= 3) {
-    finalResult = "Data Science";
-  }
-  else {
-    finalResult = sorted[0][0];
-  }
 
-  // Build results HTML
   let breakdownHTML = `
     <h3>Your strongest match:</h3>
 
-    <p class="major-result">
-      ${finalResult}
-    </p>
+    <p class="major-result">${finalResult}</p>
 
-    <p>
-      ${resultsInfo[finalResult]}
-    </p>
+    <p>${resultsInfo[finalResult]}</p>
 
     <h3>Score Breakdown</h3>
-
     <div class="score-breakdown">
   `;
 
@@ -111,9 +102,7 @@ function showResult() {
     `;
   });
 
-  breakdownHTML += `
-    </div>
-  `;
+  breakdownHTML += `</div>`;
 
   resultText.innerHTML = breakdownHTML;
 }
