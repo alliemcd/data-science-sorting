@@ -6,13 +6,16 @@ const answersEl = document.getElementById("answers");
 const resultDiv = document.getElementById("result");
 const resultText = document.getElementById("resultText");
 
-function initScores() {
-  scores = {};
 
-  Object.keys(resultsInfo).forEach(type => {
-    scores[type] = 0;
-  });
+function initScores() {
+  scores = {
+    "Machine Learning": 0,
+    "Physics & Astronomy: Data Science": 0,
+    "Statistics: Data Science": 0,
+    "Applied & Computational Mathematics": 0
+  };
 }
+
 
 function loadQuestion() {
   answersEl.innerHTML = "";
