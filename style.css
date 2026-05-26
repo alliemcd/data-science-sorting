@@ -1,5 +1,22 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sorting Quiz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
   background: #f4f6f8;
   padding: 40px 20px;
 }
@@ -28,7 +45,7 @@ button {
   padding: 14px;
   border: none;
   border-radius: 8px;
-  background: #2563eb;
+  background: #002E5D;
   color: white;
   font-size: 16px;
   cursor: pointer;
