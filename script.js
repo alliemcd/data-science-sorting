@@ -57,7 +57,7 @@ function nextQuestion() {
 function showResult() {
   console.log("showResult called");
   console.log("Scores:", scores);
-
+  
   document.getElementById("quiz").classList.add("hidden");
   resultDiv.classList.remove("hidden");
 
@@ -67,46 +67,56 @@ function showResult() {
   let finalResult = sorted[0][0];
   let recommendationReason = "";
 
+  // Count how many majors are within certain thresholds
   const withinOne = sorted.filter(([_, score]) => topScore - score <= 1);
   const withinThree = sorted.filter(([_, score]) => topScore - score <= 3);
 
+  // Logic:
+  // 1. If 3+ majors are close (within 3 points), recommend Data Science
   if (withinThree.length >= 3) {
     finalResult = "Data Science";
     recommendationReason = "You have a well-rounded profile across multiple disciplines!";
-  } else if (withinOne.length >= 2) {
+  }
+  // 2. If 2 majors are close (within 1 point), recommend Data Science
+  else if (withinOne.length >= 2) {
     finalResult = "Data Science";
     recommendationReason = "You have balanced interests across multiple fields!";
-  } else {
+  }
+  // 3. If 1 major is much higher than the rest, display that one
+  else {
     recommendationReason = "This is your strongest match!";
   }
 
   console.log("Final Result:", finalResult);
+  console.log("ResultsInfo:", resultsInfo);
 
-  // BAR CHART
-  let chartHTML = `<div class="bar-chart">`;
+  let breakdownHTML = `
+    <h3>Your strongest match:</h3>
+
+    <p class="major-result">${finalResult}</p>
+
+    <p>${resultsInfo?.[finalResult] || "Result description not available."}</p>
+
+    <p class="recommendation-reason"><em>${recommendationReason}</em></p>
+
+    <h3>Score Breakdown</h3>
+    <div class="score-breakdown">
+  `;
 
   sorted.forEach(([major, score]) => {
-    chartHTML += `
-      <div class="bar-row">
-        <div class="bar" data-score="${score}"></div>
+    breakdownHTML += `
+      <div class="score-row">
+        <span>${major}</span>
+        <span>${score}</span>
       </div>
     `;
   });
 
-  chartHTML += `</div>`;
+  breakdownHTML += `</div>`;
 
-  resultText.innerHTML = `
-    <h3>${finalResult}</h3>
-    <p>${recommendationReason}</p>
-    ${chartHTML}
-  `;
-
-  const bars = document.querySelectorAll(".bar");
-
-  bars.forEach(bar => {
-    const score = bar.getAttribute("data-score");
-    bar.style.width = `${score * 25}px`;
-  });
+  console.log("HTML to be set:", breakdownHTML);
+  resultText.innerHTML = breakdownHTML;
+  console.log("Result text innerHTML set successfully");
 }
 
 
