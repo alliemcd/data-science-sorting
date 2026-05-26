@@ -59,27 +59,29 @@ function showResult() {
   resultDiv.classList.remove("hidden");
 
   const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-
   const topScore = sorted[0][1];
 
-  const withinOne = sorted.filter(([_, score]) => topScore - score <= 1);
-  const withinTwo = sorted.filter(([_, score]) => topScore - score <= 2);
-
   let finalResult = sorted[0][0];
+  let recommendationReason = "";
 
-  // Only trigger Data Science if there is REAL balance across fields
-  const ml = scores["Machine Learning"];
-  const stats = scores["Statistics: Data Science"];
-  const acme = scores["Applied & Computational Mathematics"];
+  // Count how many majors are within certain thresholds
+  const withinOne = sorted.filter(([_, score]) => topScore - score <= 1);
+  const withinThree = sorted.filter(([_, score]) => topScore - score <= 3);
 
-  const balancedTechnical =
-    Math.abs(ml - stats) <= 1 && ml >= 3 && stats >= 3;
-
-  const broaderBalance =
-    withinTwo.length >= 3;
-
-  if (balancedTechnical || broaderBalance) {
+  // Logic:
+  // 1. If 3+ majors are close (within 3 points), recommend Data Science
+  if (withinThree.length >= 3) {
     finalResult = "Data Science";
+    recommendationReason = "You have a well-rounded profile across multiple disciplines!";
+  }
+  // 2. If 2 majors are close (within 1 point), recommend Data Science
+  else if (withinOne.length >= 2) {
+    finalResult = "Data Science";
+    recommendationReason = "You have balanced interests across multiple fields!";
+  }
+  // 3. If 1 major is much higher than the rest, display that one
+  else {
+    recommendationReason = "This is your strongest match!";
   }
 
   let breakdownHTML = `
@@ -88,6 +90,8 @@ function showResult() {
     <p class="major-result">${finalResult}</p>
 
     <p>${resultsInfo?.[finalResult] || "Result description not available."}</p>
+
+    <p class="recommendation-reason"><em>${recommendationReason}</em></p>
 
     <h3>Score Breakdown</h3>
     <div class="score-breakdown">
