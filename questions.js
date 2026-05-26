@@ -1,183 +1,151 @@
 const questions = [
   {
-    question: "What kind of data sounds most interesting to work with?",
+    question: "Which class sounds the most interesting?",
     answers: [
-      { text: "AI-generated images, language, or recommendation systems", type: "Machine Learning" },
-      { text: "Space, planets, stars, or physics experiments", type: "Physics & Astronomy: Data Science" },
-      { text: "Social media, apps, sports, or business trends", type: "Data Science" },
-      { text: "Polls, surveys, and experiments", type: "Statistics: Data Science" },
-      { text: "Patterns, equations, and simulations", type: "Applied & Computational Mathematics" }
+      { text: "Artificial Intelligence", type: "Machine Learning" },
+      { text: "Astrophysics", type: "Physics & Astronomy: Data Science" },
+      { text: "Probability and Statistics", type: "Statistics: Data Science" },
+      { text: "Differential Equations", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "Which activity sounds the most fun?",
+    question: "What type of problem would you rather solve?",
     answers: [
-      { text: "Teaching a computer to recognize patterns", type: "Machine Learning" },
-      { text: "Studying how the universe works", type: "Physics & Astronomy: Data Science" },
-      { text: "Finding insights in real-world data", type: "Data Science" },
-      { text: "Testing whether conclusions are actually reliable", type: "Statistics: Data Science" },
-      { text: "Solving difficult math problems", type: "Applied & Computational Mathematics" }
+      { text: "Teaching a computer to recognize images", type: "Machine Learning" },
+      { text: "Predicting the motion of planets", type: "Physics & Astronomy: Data Science" },
+      { text: "Determining if experimental results are trustworthy", type: "Statistics: Data Science" },
+      { text: "Modeling complex systems with equations", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "Which school subject do you enjoy most?",
+    question: "Which type of math interests you most?",
     answers: [
-      { text: "Computer Science", type: "Machine Learning" },
-      { text: "Physics or Astronomy", type: "Physics & Astronomy: Data Science" },
-      { text: "A mix of math, coding, and problem-solving", type: "Data Science" },
-      { text: "Statistics or probability", type: "Statistics: Data Science" },
-      { text: "Advanced mathematics", type: "Applied & Computational Mathematics" }
+      { text: "Algorithms and optimization", type: "Machine Learning" },
+      { text: "Physics-based calculations", type: "Physics & Astronomy: Data Science" },
+      { text: "Probability and uncertainty", type: "Statistics: Data Science" },
+      { text: "Abstract mathematical modeling", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "What sounds most rewarding?",
+    question: "Which project sounds the most exciting?",
     answers: [
-      { text: "Building smarter technology", type: "Machine Learning" },
-      { text: "Making scientific discoveries", type: "Physics & Astronomy: Data Science" },
-      { text: "Using data to solve practical problems", type: "Data Science" },
-      { text: "Finding the most accurate answer", type: "Statistics: Data Science" },
-      { text: "Creating elegant mathematical models", type: "Applied & Computational Mathematics" }
+      { text: "Building a chatbot or recommendation system", type: "Machine Learning" },
+      { text: "Analyzing telescope or satellite data", type: "Physics & Astronomy: Data Science" },
+      { text: "Designing and analyzing surveys", type: "Statistics: Data Science" },
+      { text: "Creating mathematical simulations", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "How do you usually approach problems?",
+    question: "What kind of coding sounds most interesting?",
     answers: [
-      { text: "Experiment until something works", type: "Machine Learning" },
-      { text: "Look for scientific explanations", type: "Physics & Astronomy: Data Science" },
-      { text: "Combine different tools and ideas", type: "Data Science" },
-      { text: "Carefully analyze the evidence", type: "Statistics: Data Science" },
-      { text: "Break it down mathematically", type: "Applied & Computational Mathematics" }
+      { text: "Training AI models", type: "Machine Learning" },
+      { text: "Scientific computing and simulations", type: "Physics & Astronomy: Data Science" },
+      { text: "Analyzing datasets and experiments", type: "Statistics: Data Science" },
+      { text: "Numerical methods and modeling", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "Which future career sounds most exciting?",
+    question: "Which topic would you most want to research?",
     answers: [
-      { text: "AI or Machine Learning Engineer", type: "Machine Learning" },
-      { text: "Astrophysicist or Space Researcher", type: "Physics & Astronomy: Data Science" },
-      { text: "Data Scientist", type: "Data Science" },
-      { text: "Statistician or Data Analyst", type: "Statistics: Data Science" },
-      { text: "Quantitative Researcher or Applied Mathematician", type: "Applied & Computational Mathematics" }
+      { text: "How computers learn patterns", type: "Machine Learning" },
+      { text: "Black holes or dark matter", type: "Physics & Astronomy: Data Science" },
+      { text: "How reliable scientific studies are", type: "Statistics: Data Science" },
+      { text: "How math describes real-world systems", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "Which type of project would you rather do?",
+    question: "Which kind of data sounds most interesting?",
     answers: [
-      { text: "Train an AI to make predictions", type: "Machine Learning" },
-      { text: "Analyze telescope or science data", type: "Physics & Astronomy: Data Science" },
-      { text: "Study trends in real-world behavior", type: "Data Science" },
-      { text: "Design a reliable experiment or survey", type: "Statistics: Data Science" },
-      { text: "Build mathematical simulations", type: "Applied & Computational Mathematics" }
+      { text: "Images, language, or AI-generated content", type: "Machine Learning" },
+      { text: "Space and physics experiment data", type: "Physics & Astronomy: Data Science" },
+      { text: "Polls, medical studies, or surveys", type: "Statistics: Data Science" },
+      { text: "Large mathematical or simulated datasets", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "What kind of thinking do you enjoy most?",
+    question: "Which college course sounds the most fun?",
     answers: [
-      { text: "Creative coding and experimentation", type: "Machine Learning" },
-      { text: "Scientific reasoning", type: "Physics & Astronomy: Data Science" },
-      { text: "Connecting ideas from different fields", type: "Data Science" },
-      { text: "Logical analysis and evidence", type: "Statistics: Data Science" },
-      { text: "Abstract mathematical thinking", type: "Applied & Computational Mathematics" }
-    ]
-  },
-
-  {
-    question: "What sounds most interesting to learn about?",
-    answers: [
-      { text: "How AI tools like ChatGPT work", type: "Machine Learning" },
-      { text: "Black holes, galaxies, or quantum physics", type: "Physics & Astronomy: Data Science" },
-      { text: "How companies use data to make decisions", type: "Data Science" },
-      { text: "How scientists know if results are trustworthy", type: "Statistics: Data Science" },
-      { text: "How math can describe complex systems", type: "Applied & Computational Mathematics" }
-    ]
-  },
-
-  {
-    question: "What type of work environment sounds best?",
-    answers: [
-      { text: "A fast-moving AI or tech company", type: "Machine Learning" },
-      { text: "A science lab or observatory", type: "Physics & Astronomy: Data Science" },
-      { text: "A collaborative tech or analytics team", type: "Data Science" },
-      { text: "Researching data and improving accuracy", type: "Statistics: Data Science" },
-      { text: "Working on mathematical models and simulations", type: "Applied & Computational Mathematics" }
-    ]
-  },
-
-  {
-    question: "How important is coding to your interests?",
-    answers: [
-      { text: "I want coding to be central", type: "Machine Learning" },
-      { text: "Mostly for scientific work", type: "Physics & Astronomy: Data Science" },
-      { text: "I like combining coding with analysis", type: "Data Science" },
-      { text: "Only when needed for analysis", type: "Statistics: Data Science" },
-      { text: "Mostly for solving mathematical problems", type: "Applied & Computational Mathematics" }
-    ]
-  },
-
-  {
-    question: "Which description sounds most like you?",
-    answers: [
-      { text: "I love technology and innovation", type: "Machine Learning" },
-      { text: "I’m curious about how the universe works", type: "Physics & Astronomy: Data Science" },
-      { text: "I like learning a little bit of everything", type: "Data Science" },
-      { text: "I care about accuracy and reliability", type: "Statistics: Data Science" },
-      { text: "I enjoy deep mathematical challenges", type: "Applied & Computational Mathematics" }
-    ]
-  },
-
-  {
-    question: "What would you rather spend time doing?",
-    answers: [
-      { text: "Improving an AI model", type: "Machine Learning" },
-      { text: "Analyzing scientific discoveries", type: "Physics & Astronomy: Data Science" },
-      { text: "Exploring patterns in data", type: "Data Science" },
-      { text: "Checking whether data supports a conclusion", type: "Statistics: Data Science" },
-      { text: "Solving advanced equations", type: "Applied & Computational Mathematics" }
+      { text: "Deep Learning", type: "Machine Learning" },
+      { text: "Quantum Mechanics", type: "Physics & Astronomy: Data Science" },
+      { text: "Statistical Inference", type: "Statistics: Data Science" },
+      { text: "Linear Algebra", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
     question: "What sounds most satisfying?",
     answers: [
-      { text: "Creating technology that learns", type: "Machine Learning" },
-      { text: "Understanding nature and space", type: "Physics & Astronomy: Data Science" },
-      { text: "Using data to help people make decisions", type: "Data Science" },
-      { text: "Finding the most statistically accurate answer", type: "Statistics: Data Science" },
-      { text: "Building mathematical models from scratch", type: "Applied & Computational Mathematics" }
+      { text: "Building intelligent systems", type: "Machine Learning" },
+      { text: "Understanding the universe", type: "Physics & Astronomy: Data Science" },
+      { text: "Finding the most accurate conclusion", type: "Statistics: Data Science" },
+      { text: "Solving difficult mathematical problems", type: "Applied & Computational Mathematics" }
     ]
   },
 
   {
-    question: "Which major feels closest to your personality?",
+    question: "Which tool sounds the coolest to use?",
     answers: [
-      { text: "Innovative and tech-focused", type: "Machine Learning" },
-      { text: "Scientific and curious", type: "Physics & Astronomy: Data Science" },
-      { text: "Flexible and interdisciplinary", type: "Data Science" },
-      { text: "Careful and analytical", type: "Statistics: Data Science" },
-      { text: "Theoretical and mathematical", type: "Applied & Computational Mathematics" }
+      { text: "Neural networks", type: "Machine Learning" },
+      { text: "Particle accelerators or telescopes", type: "Physics & Astronomy: Data Science" },
+      { text: "Statistical models", type: "Statistics: Data Science" },
+      { text: "Mathematical simulations", type: "Applied & Computational Mathematics" }
+    ]
+  },
+
+  {
+    question: "What kind of challenge do you enjoy most?",
+    answers: [
+      { text: "Improving AI accuracy", type: "Machine Learning" },
+      { text: "Explaining scientific phenomena", type: "Physics & Astronomy: Data Science" },
+      { text: "Making sense of uncertain results", type: "Statistics: Data Science" },
+      { text: "Building mathematical models", type: "Applied & Computational Mathematics" }
+    ]
+  },
+
+  {
+  question: "Which topic sounds most interesting to you?",
+  answers: [
+    { text: "Building smart apps like ChatGPT or recommendation systems", type: "Machine Learning" },
+    { text: "Learning about space, planets, and how the universe works", type: "Physics & Astronomy: Data Science" },
+    { text: "Figuring out what data from surveys or experiments really means", type: "Statistics: Data Science" },
+    { text: "Solving math problems and figuring out how things work using equations", type: "Applied & Computational Mathematics" }
+  ]
+},
+
+{
+  question: "Which future job sounds most interesting?",
+  answers: [
+    { text: "Working on AI that helps computers learn and make predictions", type: "Machine Learning" },
+    { text: "Studying stars, planets, or space using data and computers", type: "Physics & Astronomy: Data Science" },
+    { text: "Using data to answer questions like 'what is actually true?'", type: "Statistics: Data Science" },
+    { text: "Using math and computers to model and simulate real-world systems", type: "Applied & Computational Mathematics" }
+  ]
+},
+
+  {
+    question: "Which activity would you rather do?",
+    answers: [
+      { text: "Train an AI model", type: "Machine Learning" },
+      { text: "Analyze scientific discoveries", type: "Physics & Astronomy: Data Science" },
+      { text: "Evaluate the accuracy of data", type: "Statistics: Data Science" },
+      { text: "Work through advanced equations", type: "Applied & Computational Mathematics" }
+    ]
+  },
+
+  {
+    question: "Which phrase sounds most like you?",
+    answers: [
+      { text: "I love technology and intelligent systems", type: "Machine Learning" },
+      { text: "I’m fascinated by space and physics", type: "Physics & Astronomy: Data Science" },
+      { text: "I care about evidence and accuracy", type: "Statistics: Data Science" },
+      { text: "I enjoy abstract mathematical thinking", type: "Applied & Computational Mathematics" }
     ]
   }
 ];
-
-const resultsInfo = {
-  "Machine Learning":
-    "You are drawn to AI, intelligent systems, and technology. You likely enjoy coding, experimentation, and building systems that can learn from data.",
-
-  "Physics & Astronomy: Data Science":
-    "You are curious about science, space, and how the universe works. You enjoy using data and computation to explore scientific questions.",
-
-  "Data Science":
-    "You enjoy combining coding, math, and analysis to solve real-world problems. You are interested in many different applications of data.",
-
-  "Statistics: Data Science":
-    "You are analytical, practical, and interested in reliability and evidence. You likely enjoy understanding uncertainty and making accurate conclusions from data.",
-
-  "Applied & Computational Mathematics":
-    "You enjoy deep mathematical thinking, modeling complex systems, and solving challenging quantitative problems."
-};
