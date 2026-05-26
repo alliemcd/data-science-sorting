@@ -87,7 +87,7 @@ function showResult() {
 
     <p class="major-result">${finalResult}</p>
 
-    <p>${resultsInfo[finalResult]}</p>
+    <p>${resultsInfo?.[finalResult] || "Result description not available."}</p>
 
     <h3>Score Breakdown</h3>
     <div class="score-breakdown">
