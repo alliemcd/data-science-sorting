@@ -55,6 +55,9 @@ function nextQuestion() {
 }
 
 function showResult() {
+  console.log("showResult called");
+  console.log("Scores:", scores);
+  
   document.getElementById("quiz").classList.add("hidden");
   resultDiv.classList.remove("hidden");
 
@@ -84,6 +87,9 @@ function showResult() {
     recommendationReason = "This is your strongest match!";
   }
 
+  console.log("Final Result:", finalResult);
+  console.log("ResultsInfo:", resultsInfo);
+
   let breakdownHTML = `
     <h3>Your strongest match:</h3>
 
@@ -108,7 +114,9 @@ function showResult() {
 
   breakdownHTML += `</div>`;
 
+  console.log("HTML to be set:", breakdownHTML);
   resultText.innerHTML = breakdownHTML;
+  console.log("Result text innerHTML set successfully");
 }
 
 
