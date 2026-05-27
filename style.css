@@ -90,3 +90,25 @@ button:hover {
   font-weight: 600;
   color: #002E5D;
 }
+
+.progress-container {
+  width: 100%;
+  height: 12px;
+  background: #dbe3ea;
+  border-radius: 999px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+#progressBar {
+  height: 100%;
+  width: 0%;
+  background: #002E5D;
+  transition: width 0.3s ease;
+}
+
+#progressText {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
