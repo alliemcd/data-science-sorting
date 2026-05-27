@@ -5,6 +5,8 @@ const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
 const resultDiv = document.getElementById("result");
 const resultText = document.getElementById("resultText");
+const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
 
 
 function initScores() {
@@ -23,6 +25,14 @@ function loadQuestion() {
   const q = questions[currentQuestion];
 
   questionEl.textContent = q.question;
+
+  const progressPercent =
+    (currentQuestion / questions.length) * 100;
+
+  progressBar.style.width = `${progressPercent}%`;
+
+  progressText.textContent =
+    `${currentQuestion + 1}/${questions.length}`;
 
   // Shuffle answers randomly
   const shuffledAnswers = [...q.answers].sort(
