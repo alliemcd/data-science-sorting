@@ -27,7 +27,7 @@ function loadQuestion() {
   questionEl.textContent = q.question;
 
   const progressPercent =
-    (currentQuestion / questions.length) * 100;
+    ((currentQuestion + 1) / questions.length) * 100;
 
   progressBar.style.width = `${progressPercent}%`;
 
