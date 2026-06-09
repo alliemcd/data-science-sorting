@@ -82,13 +82,13 @@ function showResult() {
   const withinThree = sorted.filter(([_, score]) => topScore - score <= 3);
 
   // Logic:
-  // 1. If 3+ majors are close (within 3 points), recommend Data Science
-  if (withinThree.length >= 3) {
+  // 1. If 3+ majors are close (within 2 points), recommend Data Science
+  if (withinThree.length >= 2) {
     finalResult = "Data Science";
     recommendationReason = "You have a well-rounded profile across multiple disciplines!";
   }
   // 2. If 2 majors are close (within 1 point), recommend Data Science
-  else if (withinOne.length >= 2) {
+  else if (withinOne.length >= 1) {
     finalResult = "Data Science";
     recommendationReason = "You have balanced interests across multiple fields!";
   }
