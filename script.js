@@ -100,6 +100,10 @@ function showResult() {
 
   console.log("Final Result:", finalResult);
   console.log("ResultsInfo:", resultsInfo);
+  if (!finalResult) {
+    resultText.innerHTML = "<p>Something went wrong with scoring.</p>";
+    return;
+  }
 
   let breakdownHTML = `
     <h3>Your strongest match:</h3>
