@@ -143,5 +143,13 @@ function restartQuiz() {
   loadQuestion();
 }
 
+function startQuiz() {
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  currentQuestion = 0;
+  initScores();
+  loadQuestion();
+}
+
 initScores();
-loadQuestion();
