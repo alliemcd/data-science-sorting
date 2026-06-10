@@ -9,7 +9,6 @@ const progressBar = document.getElementById("progressBar");
 const progressText = document.getElementById("progressText");
 
 
-// ✅ FIX #1: Use NORMAL & instead of &amp; in JavaScript
 function initScores() {
   scores = {
     "Machine Learning": 0,
@@ -65,11 +64,10 @@ function nextQuestion() {
   }
 }
 
-
 function showResult() {
   console.log("showResult called");
   console.log("Scores:", scores);
-
+  
   document.getElementById("quiz").classList.add("hidden");
   resultDiv.classList.remove("hidden");
 
@@ -79,41 +77,38 @@ function showResult() {
   let finalResult = sorted[0][0];
   let recommendationReason = "";
 
-  const withinOne = sorted.filter(
-    ([_, score], i) => i !== 0 && topScore - score <= 1
-  );
-
-  const withinTwo = sorted.filter(
-    ([_, score], i) => i !== 0 && topScore - score <= 2
-  );
-
-  // Logic for final result
+  const withinOne = sorted.filter(([_, score], i) => i !== 0 && topScore - score <= 1);
+  const withinTwo = sorted.filter(([_, score], i) => i !== 0 && topScore - score <= 2);
+  
+  // 1. Top 3 within 2 → Data Science
   if (withinTwo.length >= 2) {
     finalResult = "Data Science";
-    recommendationReason =
-      "You have a well-rounded profile across multiple disciplines!";
-  } else if (withinOne.length >= 1) {
+    recommendationReason = "You have a well-rounded profile across multiple disciplines!";
+  }
+  
+  // 2. Top 2 within 1 → Data Science
+  else if (withinOne.length >= 1) {
     finalResult = "Data Science";
-    recommendationReason =
-      "You have balanced interests across multiple fields!";
-  } else {
+    recommendationReason = "You have balanced interests across multiple fields!";
+  }
+  
+  // 3. Otherwise → top major
+  else {
     finalResult = sorted[0][0];
     recommendationReason = "This is your strongest match!";
   }
 
   console.log("Final Result:", finalResult);
+  console.log("ResultsInfo:", resultsInfo);
 
-  // ✅ FIX #2: Use REAL HTML TAGS (< >) instead of &lt; &gt;
   let breakdownHTML = `
     <h3>Your strongest match:</h3>
 
     <p class="major-result">${finalResult}</p>
 
-    <p>Testing result display</p>
+    <p>${resultsInfo?.[finalResult] || "Result description not available."}</p>
 
-    <p class="recommendation-reason">
-      <em>${recommendationReason}</em>
-    </p>
+    <p class="recommendation-reason"><em>${recommendationReason}</em></p>
 
     <h3>Score Breakdown</h3>
     <div class="score-breakdown">
@@ -130,32 +125,23 @@ function showResult() {
 
   breakdownHTML += `</div>`;
 
+  console.log("HTML to be set:", breakdownHTML);
   resultText.innerHTML = breakdownHTML;
+  console.log("Result text innerHTML set successfully");
 }
 
 
-// ✅ FIX #3: These functions are OUTSIDE showResult (not nested)
 function restartQuiz() {
   currentQuestion = 0;
+
   initScores();
 
   resultDiv.classList.add("hidden");
+
   document.getElementById("quiz").classList.remove("hidden");
 
   loadQuestion();
 }
 
-
-function startQuiz() {
-  document.getElementById("startScreen").classList.add("hidden");
-  document.getElementById("quiz").classList.remove("hidden");
-
-  currentQuestion = 0;
-  initScores();
-
-  loadQuestion();
-}
-
-
-// ✅ FIX #4: Only initialize scores on load (do NOT start quiz automatically)
 initScores();
+loadQuestion();
