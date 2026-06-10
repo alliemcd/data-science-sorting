@@ -109,7 +109,7 @@ function showResult() {
 
     <p class="major-result">${finalResult}</p>
 
-    <p>${resultsInfo?.[finalResult] || "Result description not available."}</p>
+    <p>Testing result display</p>
 
     <p class="recommendation-reason">
       <em>${recommendationReason}</em>
