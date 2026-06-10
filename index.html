@@ -20,10 +20,18 @@
 <body>
   <div class="container">
 
-    <div id="quiz">
+    <!-- ✅ START SCREEN GOES HERE -->
+    <div id="startScreen">
+      <h1>What Data Science Major Are You?</h1>
+      <p>Answer a few questions to find your best fit.</p>
+      <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <!-- ✅ QUIZ (hidden at first) -->
+    <div id="quiz" class="hidden">
       <h2 id="question"></h2>
       <div id="answers"></div>
-      
+
       <div class="progress-container">
         <div id="progressBar"></div>
       </div>
@@ -31,6 +39,7 @@
       <p id="progressText"></p>
     </div>
 
+    <!-- ✅ RESULT (already hidden) -->
     <div id="result" class="hidden">
       <h2>Your Result</h2>
       <div id="resultText"></div>
@@ -39,6 +48,7 @@
         Restart Quiz
       </button>
     </div>
+
   </div>
 
   <script src="questions.js"></script>
