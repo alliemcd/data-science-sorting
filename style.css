@@ -112,12 +112,3 @@ button:hover {
   font-size: 14px;
   color: #555;
 }
-
-#startScreen {
-  text-align: center;
-}
-
-#startScreen p {
-  margin: 20px 0;
-  color: #555;
-}
