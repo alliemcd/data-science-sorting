@@ -9,6 +9,8 @@ const progressBar = document.getElementById("progressBar");
 const progressText = document.getElementById("progressText");
 
 
+
+
 function initScores() {
   scores = {
     "Machine Learning": 0,
@@ -65,6 +67,10 @@ function nextQuestion() {
 }
 
 function showResult() {
+  document.getElementById("quiz").classList.add("hidden");
+  resultDiv.classList.remove("hidden");
+
+  resultText.innerHTML = "<h3>TEST RESULT</h3><p>If you can see this, the result area works.</p>";
   console.log("showResult called");
   console.log("Scores:", scores);
   
@@ -125,9 +131,13 @@ function showResult() {
 
   breakdownHTML += `</div>`;
 
-  console.log("HTML to be set:", breakdownHTML);
+  console.log("resultText:", resultText);
+  console.log("breakdownHTML:", breakdownHTML);
+  
   resultText.innerHTML = breakdownHTML;
-  console.log("Result text innerHTML set successfully");
+  
+  console.log("Results inserted successfully");
+  
 }
 
 
