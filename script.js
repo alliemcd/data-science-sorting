@@ -64,6 +64,16 @@ function nextQuestion() {
   }
 }
 
+const majorLinks = {
+  "Machine Learning": "https://cs.byu.edu/education/undergraduate/programs/machine-learning/",
+  "Physics & Astronomy: Data Science": "https://physics.byu.edu/undergraduate/appliedphysics",
+  "Statistics: Data Science": "https://statistics.byu.edu/statistics-major",
+  "Applied & Computational Mathematics": "https://acme.byu.edu",
+  "Data Science": "https://statistics.byu.edu/data-science-major"
+};
+
+
+
 function showResult() {
   console.log("showResult called");
   console.log("Scores:", scores);
@@ -119,6 +129,9 @@ function showResult() {
       <div class="score-row">
         <span>${major}</span>
         <span>${score}</span>
+        <a href="${majorLinks[major] || '#'}" target="_blank" class="major-link">
+          Learn more
+        </a>
       </div>
     `;
   });
