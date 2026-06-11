@@ -112,3 +112,18 @@ button:hover {
   font-size: 14px;
   color: #555;
 }
+
+#startScreen {
+  text-align: center;
+}
+
+#startScreen p {
+  color: #555;
+  margin: 20px 0 30px;
+  line-height: 1.5;
+}
+
+#startScreen button {
+  max-width: 250px;
+  margin: 0 auto;
+}
