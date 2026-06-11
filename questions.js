@@ -149,3 +149,11 @@ const questions = [
     ]
   }
 ];
+
+const resultsInfo = {
+  "Machine Learning": "You excel at building intelligent systems and solving complex problems with data-driven approaches.",
+  "Physics & Astronomy: Data Science": "You're drawn to understanding the universe and applying data science to cosmic mysteries.",
+  "Statistics: Data Science": "You have a strong analytical mind and excel at interpreting data to uncover meaningful insights.",
+  "Applied & Computational Mathematics": "You thrive on mathematical modeling and using advanced mathematics to solve real-world problems.",
+  "Data Science": "Your interests span multiple disciplines! Data Science offers a unique intersection of all these fields, allowing you to work on diverse problems using computational, statistical, and analytical approaches."
+};
