@@ -70,8 +70,8 @@ button:hover {
 }
 
 .score-row {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 60px 100px;
   align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
@@ -88,6 +88,12 @@ button:hover {
 
 .score-row span:last-child {
   text-align: right;
+  font-weight: 600;
+  color: #002E5D;
+}
+
+.score-row span:nth-child(2) {
+  text-align: center;
   font-weight: 600;
   color: #002E5D;
 }
@@ -130,13 +136,19 @@ button:hover {
 }
 
 .major-link {
-  font-size: 12px;
-  color: #0047BA;
+  display: inline-block;
+  background: #002E5D;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
   text-decoration: none;
+  font-size: 12px;
   font-weight: 500;
-  margin-left: 10px;
+  transition: all 0.2s ease;
+  text-align: center;
 }
 
 .major-link:hover {
-  text-decoration: underline;
+  background: #0047BA;
+  transform: scale(1.03);
 }
