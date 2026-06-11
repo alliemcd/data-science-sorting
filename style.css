@@ -72,6 +72,7 @@ button:hover {
 .score-row {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
 }
@@ -126,4 +127,16 @@ button:hover {
 #startScreen button {
   max-width: 500px;
   margin: 0 auto;
+}
+
+.major-link {
+  font-size: 12px;
+  color: #0047BA;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+.major-link:hover {
+  text-decoration: underline;
 }
