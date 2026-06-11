@@ -71,13 +71,6 @@ function showResult() {
   document.getElementById("quiz").classList.add("hidden");
   resultDiv.classList.remove("hidden");
 
-  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-
-  resultText.innerHTML = `
-    <h3>Winner:</h3>
-    <p>${sorted[0][0]}</p>
-  `;
-  
   console.log("showResult called");
   console.log("Scores:", scores);
   
@@ -160,5 +153,14 @@ function restartQuiz() {
   loadQuestion();
 }
 
+function startQuiz() {
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  currentQuestion = 0;
+  initScores();
+
+  loadQuestion();
+}
+
 initScores();
-loadQuestion();
