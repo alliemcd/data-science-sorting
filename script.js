@@ -130,6 +130,15 @@ function showResult() {
   console.log("Result text innerHTML set successfully");
 }
 
+function startQuiz() {
+  document.getElementById("startScreen").classList.add("hidden");
+  document.getElementById("quiz").classList.remove("hidden");
+
+  currentQuestion = 0;
+  initScores();
+
+  loadQuestion();
+}
 
 function restartQuiz() {
   currentQuestion = 0;
@@ -138,10 +147,8 @@ function restartQuiz() {
 
   resultDiv.classList.add("hidden");
 
-  document.getElementById("quiz").classList.remove("hidden");
-
-  loadQuestion();
+  document.getElementById("startScreen").classList.remove("hidden");
+  document.getElementById("quiz").classList.add("hidden");
 }
 
 initScores();
-loadQuestion();
