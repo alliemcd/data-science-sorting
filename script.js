@@ -67,10 +67,17 @@ function nextQuestion() {
 }
 
 function showResult() {
+
   document.getElementById("quiz").classList.add("hidden");
   resultDiv.classList.remove("hidden");
 
-  resultText.innerHTML = "<h3>TEST RESULT</h3><p>If you can see this, the result area works.</p>";
+  const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+
+  resultText.innerHTML = `
+    <h3>Winner:</h3>
+    <p>${sorted[0][0]}</p>
+  `;
+  
   console.log("showResult called");
   console.log("Scores:", scores);
   
