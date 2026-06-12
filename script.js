@@ -32,7 +32,7 @@ function loadQuestion() {
   progressBar.style.width = `${progressPercent}%`;
 
   progressText.textContent =
-    `${currentQuestion + 1}/${questions.length}`;
+    `Questioin ${currentQuestion + 1} of ${questions.length}`;
 
   // Shuffle answers randomly
   const shuffledAnswers = [...q.answers].sort(
